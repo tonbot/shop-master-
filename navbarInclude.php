@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script type="text/javascript" src="owll.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript"></script>
 function userID(){
 var userid=sessionStorage.getItem('userId');
 location.href="cartgallery.php?act=''&userId=".concat(userid);
