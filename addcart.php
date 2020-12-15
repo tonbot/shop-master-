@@ -17,7 +17,7 @@ while ($row=$sql->fetch()){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TON-SHOP</title>
-    <link rel="stylesheet" href="addcart.css">
+    <link rel="stylesheet" href="customCss/addcart.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <script type="text/javascript">
@@ -90,7 +90,7 @@ document.getElementById('user').value=userid;
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/fontawesome.min.js" integrity="sha512-kI12xOdWTh/nL2vIx5Yf3z/kJSmY+nvdTXP2ARhepM/YGcmo/lmRGRttI3Da8FXLDw0Y9hRAyZ5JFO3NrCvvXA==" crossorigin="anonymous"></script>
   <script type="text/javascript" src="fontawesome/js/fontawesome.min.js"></script>
-  <script type="text/javascript" src="addcart.js"></script>
+  <script type="text/javascript" src="customJs/addcart.js"></script>
 </body>
 </html>
  <?php } ?>

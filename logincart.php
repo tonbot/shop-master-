@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <script src="js/bootstrap.min.js">   </script>
-    <script src="login.js">   </script>
+    <script src="customJs/login.js">   </script>
 </head>
 <body style=" background-color:#e5e5e5">
  <div class="container  bg-primary shadow-lg rounded" style="margin-top:30%; margin-bottom:30%;">

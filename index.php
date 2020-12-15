@@ -12,10 +12,10 @@ require_once 'navbarInclude.php';
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
    
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="customCss/index.css">
      <!-- custom css ends here -->
      <!-- custom jss-->
-    <script  type="text/javascript" src="index.js"> </script>
+    <script  type="text/javascript" src="customJs/index.js"> </script>
      <!-- custom css ends here -->
      <script type="text/javascript">
 let check=sessionStorage.getItem("username");
