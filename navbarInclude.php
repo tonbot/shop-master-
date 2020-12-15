@@ -63,7 +63,7 @@ location.href="cartgallery.php?act=''&userId=".concat(userid);
     
  </div>
  <hr/>
- <!-- carousel ends here -->
+ <!-- carousel ends here  -->
 
 
  
