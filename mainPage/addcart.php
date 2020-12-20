@@ -1,7 +1,7 @@
 <?php
 
-require_once 'include.php';    ////including bootstrap class and js
-require_once 'dbconnectio.php';   ///setting database connection by including dbconnection
+require_once 'resources/include.php';    ////including bootstrap class and js
+require_once 'databaseConnection/dbconnectio.php';  ///setting database connection by including dbconnection
 
 $cod=$_GET["act"];  ////getting code from the url 
 /// querying the database start here

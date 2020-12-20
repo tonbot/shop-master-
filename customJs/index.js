@@ -18,7 +18,6 @@ function addcart(input){
         if(xhr.readyState==4 && xhr.status==200) {
              var data= this.responseText;
              console.log(data);
-                window.location.href="index.php";
                  document.getElementById("response").style.display="block"
                  document.getElementById("response").innerHTML=" ONE PRODUCT ADDED SUCCESSFULY ";    
         }

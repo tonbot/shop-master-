@@ -1,7 +1,20 @@
+<!-- javascript checking if session is set-->
+<script type="text/javascript">
+   let check=sessionStorage.getItem("username");
+   if (check == null ){
+           location.href="mainPage/logincart.php";
+     } 
+</script>
+<!-- ends here -->
+
+
+ 
+
+
 <?php
 
-require_once 'include.php';    ////including bootstrap class and js
-require_once 'dbconnectio.php';   ///setting database connection by including dbconnection
+require_once 'resources/include.php';    ////including bootstrap class and js
+require_once 'databaseConnection/dbconnectio.php';   ///setting database connection by including dbconnection
 //require_once 'navbarInclude.php';
 
 // if server request method is get then execute delete function
@@ -32,11 +45,12 @@ require_once 'dbconnectio.php';   ///setting database connection by including db
 }
 }
 }
+
+
+
+
   ////getting code from the url 
 ///querying the database start here
-
-
-
 $userid=$_GET["userId"];
 // fecting all rows from tblproduct  where tblproduct.id=cart.tblid
 $sql2=$conn->query("SELECT * FROM tblproduct,cart,usertable WHERE  cart.userid='{$userid}' AND cart.tblid=tblproduct.id AND usertable.id=cart.userid ");
@@ -52,9 +66,14 @@ $rowss=$sql2->fetchALL();
   }
 
     ?>
+
+
+
+
+
+
   
 <!DOCTYPE html><!-- html start here -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -64,14 +83,6 @@ $rowss=$sql2->fetchALL();
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
    <script src="jquery.js"></script><!-- jquery js-->
-
-   <!-- javascript checking if session is set-->
-   <script type="text/javascript">
-   let check=sessionStorage.getItem("username");
-   if (check == null ){
-           location.href="logincart.php"
-} 
-</script>
 </head>
 
 <body class="" style="background-color:#e5e5e5" > 
@@ -105,7 +116,7 @@ $rowss=$sql2->fetchALL();
                    <div class="row ">
                       <!-- first column containing image start here -->
                       <div class="col-sm-4 text-center " >
-                          <a class="nav-link" href="addcart.php?act=<?php echo  $sql3["tblid"];?>"> <img class="img-fluid" id="img" src= <?php echo $sql3["image"];?> width="150" height="70" ></a> <!-- insert image from the db -->
+                          <a class="nav-link" href="mainPage/addcart.php?act=<?php echo  $sql3["tblid"];?>"> <img class="img-fluid" id="img" src= <?php echo $sql3["image"];?> width="150" height="70" ></a> <!-- insert image from the db -->
                       </div>
                       <!-- the column ends here -->
 

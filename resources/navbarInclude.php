@@ -1,4 +1,16 @@
 
+  <!-- checking for sessionStorage if user login or not -->
+  <script type="text/javascript">
+     function user(){
+          var userid=sessionStorage.getItem('userId');
+          location.href="cartgallery.php?act=&userId=".concat(userid);
+    }
+     </script>
+    <!-- end of checking -->
+
+
+
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +25,6 @@
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-  
-
-    <!-- checking for sessionStorage if user login or not -->
-    <script type="text/javascript">
-     function user(){
-          var userid=sessionStorage.getItem('userId');
-          location.href="cartgallery.php?act=&userId=".concat(userid);
-    }
-     </script>
-    <!-- end of checking -->
-
 </head>
 
 <body> 
@@ -37,22 +38,18 @@
 <!-- top header  ends here  -->
 
 <!-- second  header start here  -->
- <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+ <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
      <a class="navbar-brand font-size-30" href="#" disabled> Shopee </a>
      <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
      <div id="my-nav" class="collapse navbar-collapse">
      <ul class="navbar-nav mr-auto px-5">
-     <a class="nav-link bg-warning text-dark px-3" href="#" active-link ><li class="nav-item navitem2">Category </li></a>
-     <a class="nav-link bg-warning text-dark px-3" href="#" active-link ><li class="nav-item navitem2">Men</li></a>
-     <a class="nav-link bg-warning text-dark px-3" href="#" active-link ><li class="nav-item navitem2">Women</li></a>
-     <a class="nav-link bg-warning text-dark px-3" href="#" active-link ><li class="nav-item navitem2">Babies</li></a>
+     <a class="nav-link text-white px-3  " href="#" active-link ><li class="nav-item navitem2">Category </li></a>
+     <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Men</li></a>
+     <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Women</li></a>
+     <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Babies</li></a>
      </ul>
-     <from class="form-inline mx-5">
-         <input class="form-control border-5px" size="35px" type="text"  placeholder="search" >
-         <button class="btn btn-warning text-dark"  type="button" ><i class="fas fa-search"></i></button>
-     </form>
      <a class="nav-link mx-5" onclick="user()" > <i class="fas fa-shopping-cart"></i><span class="rounded-circle bg-white text-dark px-3 py-2" id="cartcount" style="width=100px; height=100px; text-align=center;">0</span></a>
      </div>
  </nav>

@@ -1,6 +1,6 @@
 <?php
 header('Content-Type:application/json');
-require_once 'dbconnectio.php';   ///setting database connection by including dbconnection;
+require_once 'databaseConnection/dbconnectio.php';  ///setting database connection by including dbconnection;
 ////////// gettting productId sent from addCart function in  (index.js);
  $productId=$_POST['productId'];
  $userid=$_POST['userid'];

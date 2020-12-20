@@ -1,12 +1,27 @@
+<!-- checking if user alreday login -->
+<script type="text/javascript">
+let check=sessionStorage.getItem("username");
+if (check == null ){
+  location.href="mainPage/logincart.php"
+}   
+</script>
+<!-- checking if user alreday login -->
+
+
+
+
 <?php
-require_once 'include.php';
-require_once 'dbconnectio.php';   ///setting database connection by including dbconnection
-require_once 'navbarInclude.php';
+require_once 'resources/include.php';
+require_once 'databaseConnection/dbconnectio.php';   ///setting database connection by including dbconnection
+require_once 'resources/navbarInclude.php';
 ///querying the database 
 $sql=$conn->query("SELECT * FROM tblProduct");
 $sql->setFetchMode(PDO::FETCH_ASSOC);
 $row=$sql->fetchAll();
  
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -22,13 +37,7 @@ $row=$sql->fetchAll();
      <!-- custom jss-->
     <script  type="text/javascript" src="customJs/index.js"> </script>
      <!-- custom css ends here -->
-     <script type="text/javascript">
-let check=sessionStorage.getItem("username");
-if (check == null ){
-  location.href="logincart.php"
-}   
-</script>
-
+    
 </head>
 
 <body onload="catcount()" class=""  style="background-color:#e5e5e5" >
@@ -40,22 +49,28 @@ if (check == null ){
       <div class="row text-center my-3 bg-white">
             <?php foreach( $row as $rowss ) { ?>   
                <div class="col-sm-3 my-3 mx-" style="max-height:309px">
-                      <img class="img-fluid w-50" style="width:204px; height:127px;" src=<?php echo $rowss["image"];?> >
+                       <a class="nav-link" href="mainPage/addcart.php?act=<?php echo  $rowss["id"];?>"> <img class="img-fluid w-50 image" style="width:204px; height:127px;" src=<?php echo $rowss["image"];?> ></a>
                       <p style="margin-top:-10px;"> <?php echo $rowss["name"];?></p>
                       <p class="font-weight-bold text-success" style="margin-top:-15px;">Price:#<?php echo $rowss["price"];?></p>
-                      <button type="button" class="btn btn-danger mb-5" onclick="addcart('input-<?php echo $rowss['id'];?>')" > Add to Cart </button>
+                      <button type="button" class="btn btn-danger mb-5" onclick="addcart('input-<?php echo $rowss['id'];?>'); catcount()" > Add to Cart </button>
                       <input type="hidden" size="2" value="<?php echo $rowss["id"];?>" id="input-<?php echo $rowss["id"];?>">
                 </div>
              <?php } ?>
+
               <!-- SUCCESSFULL PRODUCT ADDED TO CART -->
              <div class="alert alert-danger fixed-bottom  py-3 font-weight-bold ml-5" role="alert" style="width:20%; display:none;"  id="response">
              </div>
              <!-- ENDS HEREE-->
+
       </div>
      <!-- ENDS HERE -->
 
+
+
+
+
      <!-- FOOTER START HERE -->
-     <?php require_once 'footer.php'?>
+     <?php require_once 'resources/footer.php'?>
      <!-- FOOTER END HERE -->
   
 

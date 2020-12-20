@@ -3,50 +3,11 @@
     margin:0px;
     padding:0px;
 }
-#con2{
-    text-align:center;
-    margin-top:1vh;
-    margin-bottom:25vh;
-    overflow-y:auto;
-}
-.col1{
-    text-align:center;
-    background-color:white;
-    
-    
-}
-#price{
-    color:red;
-    stroke: beige;
-    margin-top: -20px;
-
-}
-#frm{
-  /*  border:1px solid gray; */
-    text-align:center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin:0px;
-}
-.conheader{
-    background-image:url("bgimage/bg-image2.jpg");
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    height:350px;
-    text-align:center;
-    padding-top: 9px;
-}
-.conheader2{
-    background-color:rgb(0,0,0, 0.2);
-    height:300px;
-    width: 100vw;
-
-}
-#image{
+ /* image transform */
+.image{
     transition:transform .5s ease;
 }
-#image:hover{
+.image:hover{
     transform:scale(1.1);
-
 } 
+/* image transform */
