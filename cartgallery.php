@@ -16,6 +16,7 @@ require_once 'dbconnectio.php';   ///setting database connection by including db
     else{      
               $userid=$_GET["userId"]; 
               $cod=$_GET["act"];  // getting data pass through parameter get from index.php;
+              if (!empty($cod)){
               $sql2=$conn->query("SELECT tblid,userid FROM cart WHERE cart.tblid='{$cod}' AND cart.userid='{$userid}'");// checking for duplicate
               $count=$sql2->rowcount();
 //if duplicate exist then update orderitem-count else insert to cart new values
@@ -28,6 +29,7 @@ require_once 'dbconnectio.php';   ///setting database connection by including db
             else{
                 
     $sql=$conn->exec("INSERT INTO cart(tblid,userid) VALUES ('$cod', '$userid' )");
+}
 }
 }
   ////getting code from the url 
@@ -161,11 +163,15 @@ $rowss=$sql2->fetchALL();
                   <h6>Subtotal</h6>
                   <h3 class="font-weight-bold">$<span id="subtotal"><?php echo (array_sum($mul));?></span></h3>
                   <button class="btn btn-success">Proceed to Checkout</button>
-
                   </div>
                  </div><!-- second col of the parent row ends here-->
-
                 </div>  <!-- parent row ends here-->
+
+
+                 <!-- FOOTER START HERE -->
+                 <?php require_once 'footer.php'?>
+                 <!-- FOOTER END HERE -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/fontawesome.min.js" integrity="sha512-kI12xOdWTh/nL2vIx5Yf3z/kJSmY+nvdTXP2ARhepM/YGcmo/lmRGRttI3Da8FXLDw0Y9hRAyZ5JFO3NrCvvXA==" crossorigin="anonymous"></script>
   <script type="text/javascript" src="fontawesome/js/fontawesome.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>

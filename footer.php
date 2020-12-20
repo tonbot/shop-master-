@@ -9,19 +9,38 @@
 <body>
     
 
-<footer>
-       <div class="container-fluid mt-5">
-           <div class="row bg-dark">
-               <div class="col-sm-3 py-2 ">
-                
+ <!-- FOOTER START HERE -->
+ <footer>
+     <div class="row bg-dark text-white text-center">
+        <div class="col-sm-3 my-5 text-left" style="margin-left:180px;">
+           <p class="font-weight-bold">Get to Know Us</p>
+           <p><a href="" class="text-white">Careers</a></p>
+           <p><a href="" class="text-white">Blog</a></p>
+           <p><a href="" class="text-white">About Us</a></p>
+           <p><a href="" class="text-white">Sustainability</a></p>
+           <p><a href="" class="text-white">Careers</a></p>
+        </div>   
+        <div class="col-sm-3 my-5 text-left" >
+           <p class="font-weight-bold">Make Money with Us</p>
+           <p><a href="" class="text-white" >Careers</a></p>
+           <p><a href="" class="text-white" >Blog</a></p>
+           <p><a href="" class="text-white">About Us</a></p>
+           <p><a href="" class="text-white">Sustainability</a></p>
+           <p><a href="" class="text-white">Careers</a></p>
+        </div>   
+        <div class="col-sm-3 my-5 text-left" >
+           <p class="font-weight-bold">Make Money with Us</p>
+           <p><a href="" class="text-white" >Careers</a></p>
+           <p><a href="" class="text-white" >Blog</a></p>
+           <p><a href="" class="text-white">About Us</a></p>
+           <p><a href="" class="text-white">Sustainability</a></p>
+           <p><a href="" class="text-white">Careers</a></p>
+        </div>   
+     </div>
+     </footer>
+    <!-- FOOTER END HERE -->
+  
 
-
-                </div>  
-         </div>
-       </div>
-</footer>
-   
-
-
+ 
 </body>
 </html>

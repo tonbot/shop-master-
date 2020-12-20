@@ -20,7 +20,7 @@
            <p class="alert alert-danger text-center ml-5"style="width:80%">Username/Password</p>
 
           <form method="post">
-              <label class="text-primary font-weight" style="margin-left:25%">Username</label>
+              <label class="text-primary font-weight" style="margin-left:25%">Username/phoneNumber, Email</label>
               <input class="form-control" type="text" id="username" auto-complete="none" style="width:50%; margin-left:25%"> 
               <label class="text-primary font-weight" style="margin-left:25%">Password</label>
               <input class="form-control"  id="password" type="password" auto-complete="none" style="width:50%; margin-left:25%">

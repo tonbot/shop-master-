@@ -13,22 +13,25 @@
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <script type="text/javascript" src="customJs/owll.js"></script>
-    <script type="text/javascript"></script>
-function userID(){
-var userid=sessionStorage.getItem('userId');
-location.href="cartgallery.php?act=''&userId=".concat(userid);
-}
   
-</script>
+
+    <!-- checking for sessionStorage if user login or not -->
+    <script type="text/javascript">
+     function user(){
+          var userid=sessionStorage.getItem('userId');
+          location.href="cartgallery.php?act=&userId=".concat(userid);
+    }
+     </script>
+    <!-- end of checking -->
+
 </head>
+
 <body> 
 <!-- top header -->
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-end">
+<nav class="navbar navbar-expand-sm  navbar-dark justify-content-end" style="background-color:orange; color:black">
 
      <ul class="navbar-nav ">
-     <li class="nav-item"><a class="nav-link" href="#" >Login/Sign-up</a></li>
-     
+     <li class="nav-item"><a class="nav-link" href="loginCart.php"  style="color:black;" >Login/Sign-up</a></li>
      </ul>  
 </nav>
 <!-- top header  ends here  -->
@@ -36,7 +39,11 @@ location.href="cartgallery.php?act=''&userId=".concat(userid);
 <!-- second  header start here  -->
  <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
      <a class="navbar-brand font-size-30" href="#" disabled> Shopee </a>
-     <ul class="navbar-nav px-5">
+     <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div id="my-nav" class="collapse navbar-collapse">
+     <ul class="navbar-nav mr-auto px-5">
      <a class="nav-link bg-warning text-dark px-3" href="#" active-link ><li class="nav-item navitem2">Category </li></a>
      <a class="nav-link bg-warning text-dark px-3" href="#" active-link ><li class="nav-item navitem2">Men</li></a>
      <a class="nav-link bg-warning text-dark px-3" href="#" active-link ><li class="nav-item navitem2">Women</li></a>
@@ -46,23 +53,38 @@ location.href="cartgallery.php?act=''&userId=".concat(userid);
          <input class="form-control border-5px" size="35px" type="text"  placeholder="search" >
          <button class="btn btn-warning text-dark"  type="button" ><i class="fas fa-search"></i></button>
      </form>
-     <a class="nav-link mx-5" onclick="userID()" > <i class="fas fa-shopping-cart"></i><span class="rounded-circle bg-white text-dark px-3 py-2" id="cartcount" style="width=100px; height=100px; text-align=center;">0</span></a>
+     <a class="nav-link mx-5" onclick="user()" > <i class="fas fa-shopping-cart"></i><span class="rounded-circle bg-white text-dark px-3 py-2" id="cartcount" style="width=100px; height=100px; text-align=center;">0</span></a>
+     </div>
  </nav>
  <!-- second header  ends here -->
     
  <!-- carousel starts -->
- <div class=" container owl-carousel owl-theme mt-3 pt-4  " id="owl"> 
-    
-    <div class="item" id="caroselItem"> <img class="img-fluid" src="product-images/CAM.jpg"> </div>
-    <div class="item" id="caroselItem"> <img class="img-fluid" src="product-images/sys (1).jpg"> </div>
-    <div class="item" id="caroselItem"> <img class="img-fluid" src="product-images/camera.jpg"> </div>
-    <div class="item" id="caroselItem"> <img class="img-fluid" src="product-images/print (2).jpg"> </div>
-    <div class="item" id="caroselItem"> <img class="img-fluid" src="product-images/CAM.jpeg"> </div>
-    <div class="item" id="caroselItem"> <img class="img-fluid" src="product-images/SCAN (1).jpg"> </div>
-    
-    
- </div>
- <hr/>
+ <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active text-center">
+      <img class="d-block w-100  " src="product-images/laundry2.png" alt="First slide">
+    </div>
+    <div class="carousel-item text-center">
+      <img class="d-block w-100" src="product-images/CO1.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item text-center">
+      <img class="d-block w-100" src="product-images/co3.png" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
  <!-- carousel ends here  -->
 
 
