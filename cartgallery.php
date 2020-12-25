@@ -2,7 +2,7 @@
 <script type="text/javascript">
    let check=sessionStorage.getItem("username");
    if (check == null ){
-           location.href="mainPage/logincart.php";
+           location.href="logincart.php";
      } 
 </script>
 <!-- ends here -->
@@ -13,7 +13,7 @@
 
 <?php
 
-require_once 'resources/include.php';    ////including bootstrap class and js
+require_once 'include.php';    ////including bootstrap class and js
 require_once 'databaseConnection/dbconnectio.php';   ///setting database connection by including dbconnection
 //require_once 'navbarInclude.php';
 
@@ -32,12 +32,16 @@ require_once 'databaseConnection/dbconnectio.php';   ///setting database connect
               if (!empty($cod)){
               $sql2=$conn->query("SELECT tblid,userid FROM cart WHERE cart.tblid='{$cod}' AND cart.userid='{$userid}'");// checking for duplicate
               $count=$sql2->rowcount();
-//if duplicate exist then update orderitem-count else insert to cart new values
+/////if duplicate exist then update orderitem-count else insert to cart new values
             if  ($count>=1){
-            
-            
-             $sql2=$conn->exec("UPDATE cart SET orderItem_count= orderItem_count + 1 WHERE cart.tblid= '{$cod}' AND cart.userId='{$userid}'");
-
+///////checking the item count if more than 10;         
+             $sql4=$conn->query("SELECT orderItem_count FROM cart WHERE cart.tblid='{$cod}' AND cart.userid='{$userid}'");
+             $sql4->setFetchMode(PDO::FETCH_ASSOC);
+             $ret=$sql4->fetch();
+//////if item count is less than 10, then update the orderitem count by increasing by one value, if not then do nothing
+                 if ( $ret["orderItem_count"] < 10 ){
+                    $sql2=$conn->exec("UPDATE cart SET orderItem_count= orderItem_count + 1 WHERE cart.tblid= '{$cod}' AND cart.userId='{$userid}'"); 
+                 }
    }
             else{
                 
@@ -83,6 +87,7 @@ $rowss=$sql2->fetchALL();
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
    <script src="jquery.js"></script><!-- jquery js-->
+   <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 
 <body class="" style="background-color:#e5e5e5" > 
@@ -116,7 +121,7 @@ $rowss=$sql2->fetchALL();
                    <div class="row ">
                       <!-- first column containing image start here -->
                       <div class="col-sm-4 text-center " >
-                          <a class="nav-link" href="mainPage/addcart.php?act=<?php echo  $sql3["tblid"];?>"> <img class="img-fluid" id="img" src= <?php echo $sql3["image"];?> width="150" height="70" ></a> <!-- insert image from the db -->
+                          <a class="nav-link" href="addcart.php?act=<?php echo  $sql3["tblid"];?>"> <img class="img-fluid" id="img" src= <?php echo $sql3["image"];?> width="150" height="70" ></a> <!-- insert image from the db -->
                       </div>
                       <!-- the column ends here -->
 
@@ -155,7 +160,7 @@ $rowss=$sql2->fetchALL();
 
                       <!-- the third column start here -->
                       <div class="col-sm-4 text-right">
-                           <p class="pname text-danger font-weight-bold pt-5 text-right "  style="font-size:15px;">$<span data-iPrice="<?php echo  $sql3["price"];?>" id="price_<?php echo  $sql3["tblid"];?>"><?php echo  $sql3["price"];?></span></p>
+                           <p class="pname text-danger font-weight-bold pt-5 text-right "  style="font-size:15px;">#<span data-iPrice="<?php echo  $sql3["price"];?>" id="price_<?php echo  $sql3["tblid"];?>"><?php echo  $sql3["price"];?></span></p>
                       </div>
                       <!-- the third column ends here -->
                    
@@ -172,11 +177,53 @@ $rowss=$sql2->fetchALL();
                   <div class="text-white border border-bottom-3 bg-secondary" style="width:100%">we offer free delivery </div>
                   <hr/>
                   <h6>Subtotal</h6>
-                  <h3 class="font-weight-bold">$<span id="subtotal"><?php echo (array_sum($mul));?></span></h3>
-                  <button class="btn btn-success">Proceed to Checkout</button>
+                  <h3 class="font-weight-bold">#<span id="subtotal"><?php echo (array_sum($mul));?>.00</span></h3>
+                  <button class="btn btn-success" type="button"  onclick="prices()" data-toggle="modal" data-target="#my-modal">Proceed to Checkout<</button>
                   </div>
                  </div><!-- second col of the parent row ends here-->
                 </div>  <!-- parent row ends here-->
+                  
+
+
+                  <!-- Billing address-->
+                   <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+                       <div class="modal-dialog modal-dialog-centered" role="document">
+                           <div class="modal-content">
+                               <div class="modal-header">
+                                   <h3 class="modal-title" id="my-modal-title">Billing address</h3>
+                                   <button class="close" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">&times;</span>
+                                   </button>
+                               </div>
+                               <div class="modal-body">
+                                   <div>
+                                    <form method="post" action="">
+                                        <label for="First name">First name</label>
+                                        <input class="form-control" type="text" id="firstName" >
+                                        <label for="Last name">Last name</label>
+                                        <input class="form-control" type="text" id="lastName" >
+                                        <label for="Username">Username</label>
+                                        <input class="form-control" type="text" id="username" >
+                                        <label for="Email">Email</label>
+                                        <input class="form-control" type="mail" id="email" >
+                                        <label for="Phonenumber">Phonenumber</label>
+                                        <input class="form-control" type="number" id="phoneNumber" >
+                                        <label for="Amount">Amount</label>
+                                        <label class="form-control" type="label"  id="amount">
+                                    </form>
+                                   </div>
+                               </div>
+                               <div class="modal-footer">
+                               <button class="btn btn-primary" type="button" onclick="payWithPaystack()" >
+                                       Continue to checkout
+                                   </button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                 <!-- Billing address-->
+
+
 
 
                  <!-- FOOTER START HERE -->

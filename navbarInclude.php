@@ -23,34 +23,34 @@
     <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="customCss/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 
 <body> 
 <!-- top header -->
-<nav class="navbar navbar-expand-sm  navbar-dark justify-content-end" style="background-color:orange; color:black">
+<nav class="navbar navbar-expand-sm  navbar-dark justify-content-end" style="background-color:gray; color:black">
 
      <ul class="navbar-nav ">
-     <li class="nav-item"><a class="nav-link" href="loginCart.php"  style="color:black;" >Login/Sign-up</a></li>
+     <li class="nav-item nav1"  style="background-color:yellow;" ><a class="nav-link" href="loginCart.php"  style="color:black;" >Login/Sign-up</a></li>
      </ul>  
 </nav>
 <!-- top header  ends here  -->
 
 <!-- second  header start here  -->
  <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
-     <a class="navbar-brand font-size-30" href="#" disabled> Shopee </a>
+     <a class="navbar-brand font-size-30 rot" href="#" disabled> TON-SHOP </a>
      <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
      <div id="my-nav" class="collapse navbar-collapse">
      <ul class="navbar-nav mr-auto px-5">
-     <a class="nav-link text-white px-3  " href="#" active-link ><li class="nav-item navitem2">Category </li></a>
+     <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Category </li></a>
      <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Men</li></a>
      <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Women</li></a>
      <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Babies</li></a>
      </ul>
-     <a class="nav-link mx-5" onclick="user()" > <i class="fas fa-shopping-cart"></i><span class="rounded-circle bg-white text-dark px-3 py-2" id="cartcount" style="width=100px; height=100px; text-align=center;">0</span></a>
+     <a class="nav-link mx-5" onclick="user()" > <i class="text-white">CART</i><span class="px-1 py-1 cartcount " id="cartcount" style="width=50px;background-color:red; color:white; height=50px; text-align:center;">0</span></a>
      </div>
  </nav>
  <!-- second header  ends here -->

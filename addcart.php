@@ -1,6 +1,6 @@
 <?php
 
-require_once 'resources/include.php';    ////including bootstrap class and js
+require_once 'include.php';    ////including bootstrap class and js
 require_once 'databaseConnection/dbconnectio.php';  ///setting database connection by including dbconnection
 
 $cod=$_GET["act"];  ////getting code from the url 
@@ -59,7 +59,7 @@ document.getElementById('user').value=userid;
                       <span><i class="fas fa-star-half"></i></span>
                       </div>
                       <hr/>
-                      <p class="pname" id="price"style="font-size:30px; font-weight:bold;"> <?php echo $row["price"];?> </p>
+                      <p class="pname" id="price"style="font-size:30px; font-weight:bold;"><?php echo $row["price"];?> </p>
                       <hr/>
                       <form method="get" action="cartgallery.php?">
                       <span class="mr-2 font-size-12px font-weight-bold">Quantity:</span>
@@ -73,7 +73,7 @@ document.getElementById('user').value=userid;
                       <input type="hidden" name="userId" id="user" >
 
                       <button class="btn btn-success mr-5" type="submit" style="width:200px;" onclick="userID()" >Add to Cart</button>
-                      <button class="btn btn-danger" type="button" style="width:200px;" >Buy Now</button></span>
+                      <button class="btn btn-danger" type="button"  onclick="pricess()" data-toggle="modal" data-target="#my-modal" style="width:200px;" >Buy Now</button></span>
                       </form></span>
                       <hr/>
                     </div>
@@ -84,6 +84,57 @@ document.getElementById('user').value=userid;
            </div>
       </div>
   </div>
+
+
+
+
+ <!-- Billing address-->
+ <div id="my-modal" class="modal fade bounceUpIn" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+                       <div class="modal-dialog modal-dialog-centered" role="document">
+                           <div class="modal-content">
+                               <div class="modal-header">
+                                   <h3 class="modal-title" id="my-modal-title">Billing address</h3>
+                                   <button class="close" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">&times;</span>
+                                   </button>
+                               </div>
+                               <div class="modal-body">
+                                   <div>
+                                    <form method="post" action="">
+                                        <label for="First name">First name</label>
+                                        <input class="form-control" type="text" name="" >
+                                        <label for="Last name">Last name</label>
+                                        <input class="form-control" type="text" name="" >
+                                        <label for="Username">Username</label>
+                                        <input class="form-control" type="text" name="" >
+                                        <label for="Email">Email</label>
+                                        <input class="form-control" type="mail" name="" >
+                                        <label for="Phonenumber">Phonenumber</label>
+                                        <input class="form-control" type="number" name="" >
+                                        <label for="Amount">Amount</label>
+                                        <label class="form-control" type="label" name="" id="amount">
+                                    </form>
+                                   </div>
+                               </div>
+                               <div class="modal-footer">
+                               <button class="btn btn-primary" type="button" >
+                                       Continue to checkout
+                                   </button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                 <!-- Billing address-->
+
+
+
+
+
+
+
+
+
+
   <div class="container-fluid bg-white mt-3 py-3">
   <p class="font-rubik font-weight-bold" style="font-size:20px; font-type:rubik;"> Product Description </p>      
   </div>

@@ -11,3 +11,19 @@
     transform:scale(1.1);
 } 
 /* image transform */
+
+/* add to cart button*/
+.btn1{
+    transition:transform .5s ease;
+} 
+.btn1:hover{ background-color: rgba(0,128,0, 0.9);
+    border:none;
+    outline: none;
+    transform:rotate(360deg);
+}
+#response{
+    transition:transform .5s ease;
+} 
+#response:hover{
+    transform:rotate(180deg);
+} 

@@ -1,0 +1,23 @@
+#con{
+    background-image: url('/product-images/userreg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#frmcontainer{
+    margin-left:30vw;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
+    width:45vw;
+    background-color: white;
+    padding:3%;
+    padding-bottom:3%;
+
+}
+.input {
+    border-top:0px;
+    border-color:cyan;
+    background:transparent;
+    font-size: 15px;
+    font-weight:bold;
+}

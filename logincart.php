@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <script src="js/bootstrap.min.js">   </script>
     <script src="customJs/login.js">   </script>
 </head>
-<body style=" background-color:#e5e5e5">
+<body style="background-image:url('product-images/userreg.jpg'); background-size:cover;">
  <div class="container  bg-primary shadow-lg rounded" style="margin-top:30%; margin-bottom:30%;">
      <div class="row">
          <!-- first column-->
@@ -27,12 +28,17 @@
              <button class="bg-primary font-weight-bold text-center text-white form-control   mb-5 mt-4" type="button" style="width:50%; margin-left:25%; height:25%" onclick="login()">LOGIN</button>
           </form>
 
+
+          
          </div>
          <!-- second column-->
          <div class="col-sm-6">
             
-            <h3 class="test-center">Login</h3>
-            <h5>please login here with your credentials</h5>
+            <h3 class="text-center text-light">Welcome!!</h3>
+            <h6>Tonshop is here to make your shopping easier with just a click</h6>
+            <h6>we are so glad to have you here</h6>
+            <h6>if dont have an Acount yet with us, kindly Click on the button below to register</button></h5>
+            
             
 
          </div>

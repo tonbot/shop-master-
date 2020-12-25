@@ -1,0 +1,36 @@
+#caroselItem{
+  max-width:255px;
+    height:auto;
+    background-color: red;
+}
+#navbar-nav2{
+    padding-left:400px;
+}
+#navbar-nav2  .navitem2 :hover{
+    background-color:yellow;
+    color:black;
+
+}
+.cartcount:hover{ 
+    background-color:rgba(0,128,0, 0.9) ;
+    color:#fff;
+
+}
+
+.rot{
+    transition:transform .5s ease;
+} 
+.rot:hover{
+    transform:rotate(360deg);
+} 
+#my-nav{
+    margin-left:25%;
+}
+.navbar-nav .nav-link:hover{
+    background-color:#ffff00;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.navbar-nav .nav-link li:hover{
+    color:#000000;
+}
