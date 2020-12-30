@@ -6,43 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
     <script src="js/bootstrap.min.js">   </script>
     <script src="customJs/login.js">   </script>
 </head>
 <body style="background-image:url('product-images/userreg.jpg'); background-size:cover;">
- <div class="container  bg-primary shadow-lg rounded" style="margin-top:30%; margin-bottom:30%;">
-     <div class="row">
-         <!-- first column-->
-         <div class="col-sm-6 bg-light justify-content-center">
-         <div class="text-center mt-3"><img class="img-fluid" src="bgimage/shopping2.jpg" width="120px" height="100px" ></div>
+ 
+     
+         <div class=" container  my-5 py-2 shadow-lg" style="width:35%; padding-left:50px; color:#fff; padding-right:50px; border-radius:20px;">
+         <div class="text-center mt-3"><img class="img-fluid" src="bgimage/shopping2.jp" alt="" width="120px" height="100px" ></div>
           <h3 class="text-center pt-2 font-weight-bold">Login</h3>
-          <h6 class="text-center">please login here with your credentials</h5>
-           <p class="alert alert-danger text-center ml-5"style="width:80%">Username/Password</p>
+          <h6 class="text-center" >please login here with your credentials</h5>
+           <p class="alert alert-danger text-center ml-5" hidden style="width:80%">Username/Password</p>
 
-          <form method="post">
-              <label class="text-primary font-weight" style="margin-left:25%">Username/phoneNumber, Email</label>
-              <input class="form-control" type="text" id="username" auto-complete="none" style="width:50%; margin-left:25%"> 
-              <label class="text-primary font-weight" style="margin-left:25%">Password</label>
-              <input class="form-control"  id="password" type="password" auto-complete="none" style="width:50%; margin-left:25%">
-             <button class="bg-primary font-weight-bold text-center text-white form-control   mb-5 mt-4" type="button" style="width:50%; margin-left:25%; height:25%" onclick="login()">LOGIN</button>
+          <form method="post" class="my-3">
+              <label class="text-primary font-weight-sm" style="font-size:14px"><i class=" text-white fa fa-user" aria-hidden="true"></i> username/phone/email</label>
+              <input class="form-control" type="text" id="username" autocomplete="none" style=""> 
+              <label class="text-primary font-weight" style="font-size:14px"><i class=" text-white fa fa-unlock-alt" aria-hidden="true"></i> password</label>
+              <input class="form-control"  id="password" type="password" autocomplete="none" style="" >
+             <button class="bg-warning font-weight-bold shadow-lg text-center text-dark form-control mt-3" type="button" onclick="login()"><i class=" text-white fa fa-sign-in" aria-hidden="true"></i>LOGIN </button>
+
           </form>
 
 
           
          </div>
-         <!-- second column-->
-         <div class="col-sm-6">
-            
-            <h3 class="text-center text-light">Welcome!!</h3>
-            <h6>Tonshop is here to make your shopping easier with just a click</h6>
-            <h6>we are so glad to have you here</h6>
-            <h6>if dont have an Acount yet with us, kindly Click on the button below to register</button></h5>
-            
-            
-
-         </div>
-     </div>
+         
  </div>
     
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

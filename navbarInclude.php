@@ -1,9 +1,18 @@
 
-  <!-- checking for sessionStorage if user login or not -->
+  <!--  -->
   <script type="text/javascript">
      function user(){
           var userid=sessionStorage.getItem('userId');
           location.href="cartgallery.php?act=&userId=".concat(userid);
+    }
+     </script>
+    <!--  -->
+
+    <!--  -->
+  <script type="text/javascript">
+     function getuserid(){
+          var userId=sessionStorage.getItem('userId');
+          location.href="orderPage.php?userId=".concat(userId);
     }
      </script>
     <!-- end of checking -->
@@ -29,8 +38,7 @@
 
 <body> 
 <!-- top header -->
-<nav class="navbar navbar-expand-sm  navbar-dark justify-content-end" style="background-color:gray; color:black">
-
+<nav class="navbar navbar-expand-sm  navbar-dark justify-content-end" style="background-color:rgba(247, 37, 133, 0.5); color:black">
      <ul class="navbar-nav ">
      <li class="nav-item nav1"  style="background-color:yellow;" ><a class="nav-link" href="loginCart.php"  style="color:black;" >Login/Sign-up</a></li>
      </ul>  
@@ -45,32 +53,43 @@
      </button>
      <div id="my-nav" class="collapse navbar-collapse">
      <ul class="navbar-nav mr-auto px-5">
-     <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Category </li></a>
-     <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Men</li></a>
-     <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Women</li></a>
-     <a class="nav-link text-white px-3 " href="#" active-link ><li class="nav-item navitem2">Babies</li></a>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Category</a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Men</a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Women</a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Babies</a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " onclick="getuserid()">order</a></li>
      </ul>
-     <a class="nav-link mx-5" onclick="user()" > <i class="text-white">CART</i><span class="px-1 py-1 cartcount " id="cartcount" style="width=50px;background-color:red; color:white; height=50px; text-align:center;">0</span></a>
+     <a class="nav-link mx-5" onclick="user()" > <i class="text-white">CART</i><span class="px-1 py-1 cartcount " id="cartcount" style="width:50px; background-color:red; color:white; height=50px; text-align:center;">0</span></a>
      </div>
  </nav>
  <!-- second header  ends here -->
     
  <!-- carousel starts -->
+  <div class="row">
+
+  <div class="col-3 text-center">
+    <img class="img-fluid d-block" style="padding-top:10px; padding-left:30px" width="400px;" src="product-images/avat.jpg" alt="advert">
+    <img class="img-fluid d-block" style="padding-top:10px; padding-left:30px" width="400px;" src="product-images/avat.jpg" alt="advert">
+
+  </div>
+
+<!-- carousel start here -->
+  <div class="col-9">
  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
+  <div class="carousel-inner" style="padding-top:10px;">
     <div class="carousel-item active text-center">
-      <img class="d-block w-100  " src="product-images/laundry2.png" alt="First slide">
+      <img class="d-block w-100 " src="product-images/car3.jpg" alt="First slide">
     </div>
     <div class="carousel-item text-center">
-      <img class="d-block w-100" src="product-images/CO1.jpg" alt="Second slide">
+      <img class="d-block w-100 " src="product-images/car1.jpeg" alt="Second slide">
     </div>
     <div class="carousel-item text-center">
-      <img class="d-block w-100" src="product-images/co3.png" alt="Third slide">
+      <img class="d-block w-100" src="product-images/car2.jpeg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -82,6 +101,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</div>
+
+</div>
+
  <!-- carousel ends here  -->
 
 

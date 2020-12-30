@@ -23,6 +23,7 @@ require_once 'databaseConnection/dbconnectio.php';   ///setting database connect
              $userid=$_GET["userId"];
              $tblid=$_POST['tb'];
              $sql=$conn->exec("DELETE FROM cart WHERE cart.userid='{$userid}' AND tblid='{$tblid}' ");
+            
     
     }
 //else execute the code below;
@@ -177,52 +178,12 @@ $rowss=$sql2->fetchALL();
                   <div class="text-white border border-bottom-3 bg-secondary" style="width:100%">we offer free delivery </div>
                   <hr/>
                   <h6>Subtotal</h6>
-                  <h3 class="font-weight-bold">#<span id="subtotal"><?php echo (array_sum($mul));?>.00</span></h3>
-                  <button class="btn btn-success" type="button"  onclick="prices()" data-toggle="modal" data-target="#my-modal">Proceed to Checkout<</button>
+                  <h3 class="font-weight-bold">#<span id="subtotal"><?php echo (array_sum($mul));?></span></h3>
+                  <button class="btn btn-success" type="button"  onclick="payWithPaystack()" >Proceed to Checkout<</button>
                   </div>
                  </div><!-- second col of the parent row ends here-->
                 </div>  <!-- parent row ends here-->
                   
-
-
-                  <!-- Billing address-->
-                   <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
-                       <div class="modal-dialog modal-dialog-centered" role="document">
-                           <div class="modal-content">
-                               <div class="modal-header">
-                                   <h3 class="modal-title" id="my-modal-title">Billing address</h3>
-                                   <button class="close" data-dismiss="modal" aria-label="Close">
-                                       <span aria-hidden="true">&times;</span>
-                                   </button>
-                               </div>
-                               <div class="modal-body">
-                                   <div>
-                                    <form method="post" action="">
-                                        <label for="First name">First name</label>
-                                        <input class="form-control" type="text" id="firstName" >
-                                        <label for="Last name">Last name</label>
-                                        <input class="form-control" type="text" id="lastName" >
-                                        <label for="Username">Username</label>
-                                        <input class="form-control" type="text" id="username" >
-                                        <label for="Email">Email</label>
-                                        <input class="form-control" type="mail" id="email" >
-                                        <label for="Phonenumber">Phonenumber</label>
-                                        <input class="form-control" type="number" id="phoneNumber" >
-                                        <label for="Amount">Amount</label>
-                                        <label class="form-control" type="label"  id="amount">
-                                    </form>
-                                   </div>
-                               </div>
-                               <div class="modal-footer">
-                               <button class="btn btn-primary" type="button" onclick="payWithPaystack()" >
-                                       Continue to checkout
-                                   </button>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                 <!-- Billing address-->
-
 
 
 

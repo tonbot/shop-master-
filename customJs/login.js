@@ -20,7 +20,8 @@ function login(){
          // else{
             sessionStorage.setItem("username",  data[0].firstName);
             sessionStorage.setItem("userId", data[0].id);
-            sessionStorage.setItem("userPhoneNumber", data[0].phoneNumber);
+            sessionStorage.setItem("userPhone", data[0].phoneNumber);
+            sessionStorage.setItem("userEmail", data[0].email);
          // }
           
        

@@ -9,7 +9,7 @@
 <body>
     
      <footer>
-         <div class="py-3 text-white" style="background-color:gray;"></div>
+         <div class="py-3 text-white" style="background-color:gray; margin-top:300px;"></div>
      </footer>
 
  <!-- FOOTER START HERE -->

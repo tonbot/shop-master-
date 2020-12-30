@@ -43,12 +43,16 @@ $row=$sql->fetchAll();
 <body onload="catcount()" class=""  style="background-color:#e5e5e5" >
     
 
+      <div class="row">
+      
+  
 
 
-      <!-- PHP LOADING PRODUCT ITEM -->
+         <!-- PHP LOADING PRODUCT ITEM -->
+      <div class="col-9 ml-5 ">
       <div class="row text-center my-3 bg-white">
             <?php foreach( $row as $rowss ) { ?>   
-               <div class="col-sm-3 my-3 mx-" style="max-height:309px">
+               <div class="col-sm-4 my-3 mx-" style="max-height:309px">
                        <a class="nav-link" href="addcart.php?act=<?php echo  $rowss["id"];?>"> <img class="img-fluid w-50 image" style="width:204px; height:127px;" src=<?php echo $rowss["image"];?> ></a>
                       <p style="margin-top:-10px;"> <?php echo $rowss["name"];?></p>
                       <p class="font-weight-bold text-success" style="margin-top:-15px;">Price:#<?php echo $rowss["price"];?></p>
@@ -63,9 +67,16 @@ $row=$sql->fetchAll();
              <!-- ENDS HEREE-->
 
       </div>
-     <!-- ENDS HERE -->
+     </div>
+      <!-- ENDS HERE -->
 
+      <!-- advert column -->
+     <div class="col-2 ">
+          <img class="img-fluid d-block py-3" style="" src="product-images/avatside.jpg" alt="advert">
+     </div>
+     <!-- advert column stop here-->
 
+     </div>
 
 
 
