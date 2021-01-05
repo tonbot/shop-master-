@@ -21,15 +21,14 @@
            <p class="alert alert-danger text-center ml-5" hidden style="width:80%">Username/Password</p>
 
           <form method="post" class="my-3">
-              <label class="text-primary font-weight-sm" style="font-size:14px"><i class=" text-white fa fa-user" aria-hidden="true"></i> username/phone/email</label>
+              <label class="text-warning font-weight-sm" style="font-size:14px"><i class=" text-white fa fa-user" aria-hidden="true"></i> username/phone/email</label>
               <input class="form-control" type="text" id="username" autocomplete="none" style=""> 
-              <label class="text-primary font-weight" style="font-size:14px"><i class=" text-white fa fa-unlock-alt" aria-hidden="true"></i> password</label>
+              <label class="text-warning font-weight" style="font-size:14px"><i class=" text-white fa fa-unlock-alt" aria-hidden="true"></i> password</label>
               <input class="form-control"  id="password" type="password" autocomplete="none" style="" >
              <button class="bg-warning font-weight-bold shadow-lg text-center text-dark form-control mt-3" type="button" onclick="login()"><i class=" text-white fa fa-sign-in" aria-hidden="true"></i>LOGIN </button>
-
           </form>
 
-
+               <div class="" style="font-size:14px">Dont have an account? <span><a class="text-light " href="userReg.php">Register here</a></span></div>
           
          </div>
          

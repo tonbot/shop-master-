@@ -142,3 +142,11 @@ function increase_cart(inputElementID,price){
       xhr3.send(fd) 
     }
 ////////emptyCart ends here
+
+
+///back button
+
+
+function btnback (){
+  history.back();
+}

@@ -1,11 +1,12 @@
-<!-- checking if user alreday login -->
+<!-- checking if user alreday login 
 <script type="text/javascript">
 let check=sessionStorage.getItem("username");
 if (check == null ){
   location.href="logincart.php"
 }   
 </script>
-<!-- checking if user alreday login -->
+checking if user alreday login 
+-->
 
 
 
@@ -42,22 +43,20 @@ $row=$sql->fetchAll();
 
 <body onload="catcount()" class=""  style="background-color:#e5e5e5" >
     
-
-      <div class="row">
-      
-  
-
-
+       <div class="container con1">
+      <div class="row row1">
          <!-- PHP LOADING PRODUCT ITEM -->
-      <div class="col-9 ml-5 ">
-      <div class="row text-center my-3 bg-white">
+      <div class="col-9" >
+      <div class="row my-3 text-center  ">
             <?php foreach( $row as $rowss ) { ?>   
-               <div class="col-sm-4 my-3 mx-" style="max-height:309px">
-                       <a class="nav-link" href="addcart.php?act=<?php echo  $rowss["id"];?>"> <img class="img-fluid w-50 image" style="width:204px; height:127px;" src=<?php echo $rowss["image"];?> ></a>
-                      <p style="margin-top:-10px;"> <?php echo $rowss["name"];?></p>
+               <div class="col-sm-4 my-3">
+               <div class="bg-white shadow-lg ">
+                       <a class="nav-link" href="addcart.php?act=<?php echo  $rowss["id"];?>"> <img class="img-fluid image" style="width:auto; height:100px;" src=<?php echo $rowss["image"];?> ></a>
+                      <p style="margin-top:-10px; font-size:12px;"> <?php echo $rowss["name"];?></p>
                       <p class="font-weight-bold text-success" style="margin-top:-15px;">Price:#<?php echo $rowss["price"];?></p>
                       <button type="button" class="btn btn-danger mb-5 btn1" onclick="addcart('input-<?php echo $rowss['id'];?>'); catcount()" > Add to Cart </button>
                       <input type="hidden" size="2" value="<?php echo $rowss["id"];?>" id="input-<?php echo $rowss["id"];?>">
+                </div>
                 </div>
              <?php } ?>
 
@@ -71,14 +70,16 @@ $row=$sql->fetchAll();
       <!-- ENDS HERE -->
 
       <!-- advert column -->
-     <div class="col-2 ">
-          <img class="img-fluid d-block py-3" style="" src="product-images/avatside.jpg" alt="advert">
+     <div class="col-sm-2">
+          <img class=" py-3" style="" src="product-images/avatside.jpg" alt="advert">
      </div>
      <!-- advert column stop here-->
-
      </div>
 
-
+     <div class="container text-center">
+     <img class="" style="margin-left:-23px;" src="product-images/avat5.jpg" alt="advert">
+     </div>
+     </div>
 
      <!-- FOOTER START HERE -->
      <?php require_once 'footer.php'?>

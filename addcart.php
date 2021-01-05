@@ -20,6 +20,8 @@ while ($row=$sql->fetch()){
     <link rel="stylesheet" href="customCss/addcart.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
 <script type="text/javascript">
 let check=sessionStorage.getItem("username");
 if (check == null ){
@@ -59,13 +61,13 @@ document.getElementById('user').value=userid;
                       <span><i class="fas fa-star-half"></i></span>
                       </div>
                       <hr/>
-                      <p class="pname" id="price"style="font-size:30px; font-weight:bold;"><?php echo $row["price"];?> </p>
+                      <p class="pname" id="price" data-init="<?php echo $row["price"];?> " style="font-size:30px; font-weight:bold;"><?php echo $row["price"];?> </p>
                       <hr/>
                       <form method="get" action="cartgallery.php?">
                       <span class="mr-2 font-size-12px font-weight-bold">Quantity:</span>
-                      <button class="border-0 bg-light-70 text-black font-weight-bold" id="btndecrease" type="button" onclick="decreaseQ()">-</button>
-                      <input class="mx-0" type="text" size="4"  value="1" id="quantity">
-                      <button class="border-0 bg-light-70 text-black font-weight-bold" id="btnincrease" type="button" onclick="increaseQ()">+</i></button>
+                      <button class="border bg-light-70 text-black font-weight-bold" id="btndecrease" type="button" onclick="decreaseQ()">-</button>
+                      <input class="mx-0" type="text" size="5"  value="1" id="quantity"  style="margin-left:-4px; margin-right:-4px; border-color:white;" >
+                      <button class="border bg-light-70 text-black font-weight-bold" id="btnincrease" type="button" onclick="increaseQ()">+</button>
                       <hr/>
                       
                     
@@ -73,7 +75,7 @@ document.getElementById('user').value=userid;
                       <input type="hidden" name="userId" id="user" >
 
                       <button class="btn btn-success mr-5" type="submit" style="width:200px;" onclick="userID()" >Add to Cart</button>
-                      <button class="btn btn-danger" type="button"  onclick="pricess()" data-toggle="modal" data-target="#my-modal" style="width:200px;" >Buy Now</button></span>
+                      <button class="btn btn-danger" type="button"  onclick="payWithPaystack()"  style="width:200px;" >Buy Now</button></span>
                       </form></span>
                       <hr/>
                     </div>
@@ -88,44 +90,7 @@ document.getElementById('user').value=userid;
 
 
 
- <!-- Billing address-->
- <div id="my-modal" class="modal fade bounceUpIn" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
-                       <div class="modal-dialog modal-dialog-centered" role="document">
-                           <div class="modal-content">
-                               <div class="modal-header">
-                                   <h3 class="modal-title" id="my-modal-title">Billing address</h3>
-                                   <button class="close" data-dismiss="modal" aria-label="Close">
-                                       <span aria-hidden="true">&times;</span>
-                                   </button>
-                               </div>
-                               <div class="modal-body">
-                                   <div>
-                                    <form method="post" action="">
-                                        <label for="First name">First name</label>
-                                        <input class="form-control" type="text" name="" >
-                                        <label for="Last name">Last name</label>
-                                        <input class="form-control" type="text" name="" >
-                                        <label for="Username">Username</label>
-                                        <input class="form-control" type="text" name="" >
-                                        <label for="Email">Email</label>
-                                        <input class="form-control" type="mail" name="" >
-                                        <label for="Phonenumber">Phonenumber</label>
-                                        <input class="form-control" type="number" name="" >
-                                        <label for="Amount">Amount</label>
-                                        <label class="form-control" type="label" name="" id="amount">
-                                    </form>
-                                   </div>
-                               </div>
-                               <div class="modal-footer">
-                               <button class="btn btn-primary" type="button" >
-                                       Continue to checkout
-                                   </button>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                 <!-- Billing address-->
-
+ 
 
 
 

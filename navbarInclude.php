@@ -46,35 +46,44 @@
 <!-- top header  ends here  -->
 
 <!-- second  header start here  -->
- <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
-     <a class="navbar-brand font-size-30 rot" href="#" disabled> TON-SHOP </a>
+ <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
+     <a class="navbar-brand font-size-30 rot" href="#" disabled><i class=" text-white fas fa-home"></i> TON-SHOP </a>
      <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
      <div id="my-nav" class="collapse navbar-collapse">
      <ul class="navbar-nav mr-auto px-5">
-     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Category</a></li>
-     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Men</a></li>
-     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Women</a></li>
-     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Babies</a></li>
-     <li class="nav-item navitem2"><a class="px-3 py-3 " onclick="getuserid()">order</a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3" href="#" active-link >Category <i class="fas fa-angle-down"></i></a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Men <i class="fas fa-angle-down"></i></a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Women <i class="fas fa-angle-down"></i></a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Babies <i class="fas fa-angle-down"></i></a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Computers <i class="fas fa-angle-down"></i></a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Arts and Crafts <i class="fas fa-angle-down"></i></a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Electronics <i class="fas fa-angle-down"></i></a></li>
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" active-link >Deals<i class="fas fa-angle-down"></i></a></li>
+
+     <li class="nav-item navitem2"><a class="px-3 py-3 " href="#" onclick="getuserid()" active-link >Order</a></li>
      </ul>
-     <a class="nav-link mx-5" onclick="user()" > <i class="text-white">CART</i><span class="px-1 py-1 cartcount " id="cartcount" style="width:50px; background-color:red; color:white; height=50px; text-align:center;">0</span></a>
+     <a class="mx-2" onclick="user()" ><button class="btn btn-primary shadow-lg btn-outline-none"><i class="fa fa-cart-plus text-white" aria-hidden="true"></i> <span class="cartcount" id="cartcount">0</span></button></a>
+                 
      </div>
  </nav>
+
+ <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page"><a href="index.php">Home</a></li>
+  </ol>
+</nav>
+
+      
  <!-- second header  ends here -->
     
  <!-- carousel starts -->
+ <div class="container-fluid">
+   
   <div class="row">
-
-  <div class="col-3 text-center">
-    <img class="img-fluid d-block" style="padding-top:10px; padding-left:30px" width="400px;" src="product-images/avat.jpg" alt="advert">
-    <img class="img-fluid d-block" style="padding-top:10px; padding-left:30px" width="400px;" src="product-images/avat.jpg" alt="advert">
-
-  </div>
-
 <!-- carousel start here -->
-  <div class="col-9">
+  <div class="col-sm-12  ">
  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -106,7 +115,7 @@
 </div>
 
  <!-- carousel ends here  -->
-
+ </div>
 
  
 

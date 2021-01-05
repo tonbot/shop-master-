@@ -93,9 +93,20 @@ $rowss=$sql2->fetchALL();
 
 <body class="" style="background-color:#e5e5e5" > 
 
-    <div class="bg-white md-3 py-3 pl-3">
-       <h1 class="font-weight-bold md-3">Shopping cart</h1>
+    <div class="bg-white d-flex md-3 py-3 pl-3">
+       <h1 class="font-weight-bold md-3">Shopping cart</h1><span class="cart" style="width:3px;"><i class="fa fa-shopping-basket" aria-hidden="true"></i></span>
+       <button class="btn text-dark" id="back" onclick="btnback()" style="margin-left:70%"><i class="fa fa-chevron-circle-left fa-3x" aria-hidden="true"></i></button>
     </div>
+
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="cartgallery.php?act=&userId=">Cart</a></li>
+  </ol>
+</nav>
+  
+
+
     <!-- header -->
     <!-- header for product -->
     <div class="container mt-3 bg-light  " style="width:64.3%; margin-left:48px;">
@@ -141,7 +152,7 @@ $rowss=$sql2->fetchALL();
                             <!-- increasing and decreasing quantity start here-->
                             <div class="qty">
                             <button class="qty_down border bg-light font-weight-bold" data-id="pro1" onload="decrease_cart('qty_input_<?php echo  $sql3['tblid'];?>', 'price_<?php echo  $sql3['tblid'];?>')"  onclick="decrease_cart('qty_input_<?php echo  $sql3['tblid'];?>', 'price_<?php echo  $sql3['tblid'];?>')" id="btndecrease_<?php echo  $sql3["tblid"];?>" type="button" >-</button>
-                            <input type="text" class="qty_input" size="5" data-id="pro1" id="qty_input_<?php echo  $sql3["tblid"];?>" style="margin-left:-4px; margin-right:-4px; border-color:white;" value="<?php echo $sql3["orderItem_count"];?>">
+                            <input type="label" class="qty_input" size="5" data-id="pro1" id="qty_input_<?php echo  $sql3["tblid"];?>" style="margin-left:-4px; margin-right:-4px; border-color:white;" value="<?php echo $sql3["orderItem_count"];?>">
                             <button class=" qty_up border bg-light font-weight-bold" data-id="pro1"  onload="increase_cart('qty_input_<?php echo  $sql3['tblid'];?>', 'price_<?php echo  $sql3['tblid'];?>')" onclick="increase_cart('qty_input_<?php echo  $sql3['tblid'];?>', 'price_<?php echo  $sql3['tblid'];?>')" id="btnincrease_<?php echo  $sql3["tblid"];?>" type="button" >+</button>
                             </div>
                             <!-- increasing and decreasing quantity ends here-->
@@ -183,9 +194,15 @@ $rowss=$sql2->fetchALL();
                   </div>
                  </div><!-- second col of the parent row ends here-->
                 </div>  <!-- parent row ends here-->
+
+
+
+                <div class="container text-center">
+                     <img class="" style="margin-left:-23px;" src="product-images/avat5.jpg" alt="advert">
+                </div>
                   
-
-
+                     
+                
 
                  <!-- FOOTER START HERE -->
                  <?php require_once 'footer.php'?>

@@ -33,6 +33,18 @@ foreach ($data as $row) {
 
 <body class="" style="background-color:#e5e5e5" > 
 <div class="bg-white"><h1 class="text-weight-bold px-3 py-3">ORDER HISTORY</h1></div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+    <li class="breadcrumb-item " ><a href="cartgallery.php?act=&userId=">Cart</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="">Order</a></li>
+  </ol>
+</nav>
+  
+
+
+
 <div class="row  mx-4 mb-5"><!-- parent row start  here-->
                    
                    <?php foreach($arr as $sql3){ //looping through the array using foreach  ?>  

@@ -1,4 +1,4 @@
-
+@media (min-width: 1440px) {  
 *{
     margin:0px;
     padding:0px;
@@ -6,6 +6,7 @@
  /* image transform */
 .image{
     transition:transform .5s ease;
+
 }
 .image:hover{
     transform:scale(1.1);
@@ -17,3 +18,14 @@
     border:none;
     outline: none;
 }
+}
+@media (max-width: 500px) {  
+  
+    .row1{
+        padding-left:50px;
+    }
+    .btn1:hover{ background-color: rgba(128, 58, 0, 0.9);
+        border:none;
+        outline: none;
+    }
+}  
